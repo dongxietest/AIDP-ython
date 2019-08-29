@@ -1,7 +1,4 @@
-def a():
-    s = 1
-    s += 1
-    print(s)
-    a()
+#这是一个测试代码
 
-a()
+print("hello,wolrd")
+print("github 修改内容")
