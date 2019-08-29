@@ -1,0 +1,67 @@
+day10回顾
+  1. 文件操作
+  2. 面向对象编程
+1. 文件打开:
+   f = open("文件路径名", '打开模式rt')
+   .. 读/写
+   f.close()
+   失败靠try-except 捕获异常来收到通知
+方法:
+   f.read(n)
+   f.readline()
+   f.readlines()
+   f.write(字符串或字节串)
+   f.writelines(字符串或字节串的列表)
+   f.seek()
+   f.tell()
+   f.flush()
+   f.close()
+
+二种模式:
+   't' 代表文本文件操作
+        以字符串为单位进行操作
+   'b' 代表二进制文件操作
+        以字节串为单位进行操作(不自动进行编解码)
+
+汉字编码:
+   GB系列
+   UNICODE系列 <---> UTF8
+      python3字符串内用的是UNICODE编码
+    外部:
+      s = "ABC中文"
+      s.encode('编码字符串')
+    编码字符串:
+       'utf-8', 'gbk', 'gb2312',
+       'gb18030', 'ascii', ....
+
+面向对象编程:
+   类 ,对象
+   类:
+      class A:
+          pass
+      A绑定一个类
+   对象:
+      a = A()  用类来创建对象
+   实例属性:
+      a.color = '白色'
+   实例方法:
+      class A:
+          def get_color(self):
+              return self.color 
+   实例方法的调用:
+      a.get_color()
+   初始化方法:
+      class A:
+          def __init__(self, name, age...):
+              self.name = name
+              ...
+
+markdown 文档的编库工具
+   typora
+   vscode
+   ...
+
+
+
+
+

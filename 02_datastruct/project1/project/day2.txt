@@ -1,0 +1,76 @@
+httpserver
+
+http server  + 框架结构
+
+前端 前台 客户端  用户端
+功能：
+1. 和用户进行交互，获取用户请求
+2. 和后端进行通信，整理用户请求给后端
+3. 接受后端的内容，展现给用户
+
+要求： 
+1.良好的用户体验 
+2.较全面的交互能力
+3.必要的优化
+4.良好的跨平台性能
+
+
+后端 后台 服务端
+功能 ： 
+1. 接受前端的请求
+2. 进行逻辑处理和运算处理
+3. 和磁盘进行交互 （数据库   文件）
+4. 进行数据的整理，更好的向前端返回结果
+
+要求：
+1. 良好的管理方案或者界面
+2. 更好的并发性 （并发方案）
+3. 更快速的处理速度 （良好的算法逻辑）
+4. 更好的健壮性
+5. 更好的可维护性和扩展性
+6. 选择更加适合的技术搭配和框架
+
+
+httpserver
+
+
+网站后端
+
+httpserver  +  WebFrame
+
+第三版 
+   功能 ： 
+     httpserver：
+       获取http请求 
+       解析http请求
+       将请求发送给WebFrame
+       从WebFrame接收反馈数据
+       将数据组织为Response格式发送给客户端
+
+     WebFrame：
+       从httpserver接收具体请求
+       根据请求进行逻辑处理和数据处理
+          * 静态页面
+	  * 逻辑数据
+       将需要的数据反馈给httpserver
+
+     升级点 ： 1. 采用httpserver和应用处理分离的模式
+               2. 降低了耦合度
+	       3. 原则上httpserver可以搭配任意的   webFrame
+
+项目结构：  
+           |--httpserver --HttpServer.py (主程序)    |             --settings (httpserver配置) |   
+  project--|
+           |
+           |
+           |--WebFrame   --static （存放静态网页）
+	                 --views.py （ 应用处理程序） 
+                         --urls.py （存放路由）
+			 --settings （框架配置）
+			 --WebFrame.py (主程序代码)
+
+
+Python的httpserver
+
+python2 BaseHTTPServer
+python3 http.server

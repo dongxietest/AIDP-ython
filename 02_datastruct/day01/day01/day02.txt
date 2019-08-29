@@ -1,0 +1,9 @@
+自定义一个DynamicArray类，实现线性表的顺序存储
+  内部使用list进行存储(先假定list一但创建长度不可变)
+
+  示例见:
+    DynamicArray
+
+自己实现DynamicArray中的index方法:
+　　要求:
+      内list内建的index方法功能一致

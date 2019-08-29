@@ -1,0 +1,298 @@
+自我介绍：
+	Linux
+	贾琳倩
+	公司:jialinqian@tedu.cn
+	个人：mail4homework@yeah.net
+	主题：中心+姓名+问题描述
+	内容：源码+问题截图
+	风格：案例贯穿知识点
+
+本节课内容：
+	操作系统介绍
+	计算机组成
+	VMware使用
+	Linux命令(重点)
+
+1. 操作系统
+	是管理和控制计算机硬件和软件资源的计算机程序
+   三大操作系统：
+       Unix: AIX(IBM公司)/Solaris(SUN公司)/MacOS(苹果电脑)/ISO(苹果手机移动端)
+       Windows:图形用户界面模式(GUI):Win31/win32/win95/win98/win2000/win2003/winxp/win7/win8/win10/winserver    
+       Linux:个人学习研发使用：Ubuntu(免费)/Fedora(免费)/Redhat(收费)/CentOS(红帽开源免费版)/Android(手机移动端)
+
+2. 计算机组成
+	由计算机硬件和计算机软件组成。
+	硬件：CPU/内存/硬盘/输入输出设备/主板/机箱及电源等辅助设备。
+	软件：分为系统软件(Unix/Windows/Linux)和应用软件(如QQ/微信)。
+
+补充： Linux系统基本结构
+	应用程序
+	标准库
+	操作系统内核
+	硬件
+
+3. VMware使用
+	Linux虚拟机：
+	用户名：tarena
+	密码：tarena
+
+	终端：
+	字体调整
+	减小：ctrl+减号
+	增大：ctrl+shift+等号
+	打开：点击左上角应用
+	      或者搜索“终端”点击打开
+	      或者 Ctrl+Alt+字母t
+	如果已经打开终端，再打开一个标签页 Ctrl+Shift+字母t
+	退出：输入“exit”命令
+	      或者 Ctrl+字母d
+	      或者 点左上角关闭按钮
+	%
+	Win：  C:\Users\Python\Desktop\WAID1905 反斜杠
+	linux: /home/tarena 斜杠
+	"/" -> 根目录
+	"~" -> 主目录（家/主文件夹）
+		其路径是:/home/tarena
+
+4. Linux命令(重点)
+（1）目标：主目录创建Exercise01文件夹
+     步骤： 查看当前工作目录：pwd
+	    查看是否已存在：ls
+	    若有，删除文件夹： rmdir
+	    创建文件夹: mkdir
+
+  pwd 
+  作用： 查看当前的工作目录
+  使用： 输入pwd回车
+  实例： $ pwd
+         /home/tarena
+
+  ls
+  作用：显示指定目录下文件或文件夹的信息
+  使用：ls [选项] [文件名或者文件夹名]
+     注：[]是可选项，不是必填内容
+     常用的选项值： 
+      * a -> 显示全部的文件/文件夹，包含以.开头的文件或者文件夹(隐藏)
+      * l -> 以列表的方式显示文件的详细信息
+      * 两个选项值同时使用：ls -al <==> ll 
+     文件或文件夹名：
+     * 不写时，默认当前目录
+     * ls  文件夹: 查看该文件夹内的文件信息
+     * ls -l 文件：查看该文件的详细信息
+     * 特例：ls . -> 当前目录
+             ls .. -> 上一级目录
+	     ls ~ -> 主目录
+	     ls / -> 根目录
+  实例：
+    $ ls 
+    $ ls -a 
+    $ ls -l 
+    $ ls -al
+    $ ll 
+    $ ls PythonBase
+    $ ls -l PythonBase
+    $ ls -l 1.txt
+    $ ls .
+    $ ls ..
+    $ ls ~ 
+    $ ls /
+
+  rmdir 
+  作用：删除一个或者多个文件夹
+  使用：rmdir [选项] 文件夹名
+      常用的选项值：
+      * p -> 如果中间的文件夹也为空，可以逐级删除中间的文件夹
+  注意：文件夹内必须为空，没有文件
+  实例：
+    $ rmdir Exercise01
+    $ tree 
+        .
+	├── a
+	│   └── b
+	│       └── c
+	│           └── d
+	└── test.txt
+
+	4 directories, 1 file
+
+    $ rmdir -p a/b/c/d
+  
+  mkdir 
+  作用：创建一个或多个文件夹
+  使用：mkdir [选项] 文件夹名1  文件夹名2 ...
+      常用选项值：
+      * p -> 如果中间的文件夹不存在，则逐级创建所有文件夹
+  实例：
+    $ mkdir Exercise01
+    $ mkdir Exercise02 Exercise03 
+    $ mkdir -p Exercise04/a/b/c/d
+    $ tree Exercise04
+	Exercise04
+	└── a
+	    └── b
+		└── c
+		    └── d
+
+	4 directories, 0 files
+
+  tree 
+  作用：显示目录树
+  使用：tree 文件夹
+  实例：
+    $ tree 
+    $ tree Exercise04
+
+  clear 
+  作用：清屏
+  使用：输入clear回车
+
+  小练习：
+  在主文件夹内创建MyLinux文件夹，内部创建day01和day02文件夹。并显示目录树，验证是否创建成功。
+
+（2）目标：Exercise01文件夹内创建文件node.txt
+     步骤：1. 进入Exercise01文件夹 cd
+           2. 创建文件 touch
+
+   cd
+   作用：更改当前工作目录
+   使用：cd [路径]
+   特例：
+     $ cd	-> 进入主目录（家）
+     $ cd ~     -> 进入主目录（家）
+     $ cd .	-> 进入当前目录
+     $ cd ..	-> 进入上一级目录
+     $ cd ../.. -> 进入上一级的上一级目录
+     $ cd -	-> 进入上一次所在的工作目录
+     $ cd /	-> 进入根目录
+   实例：
+     $ cd Exercise01  -> 文件夹名
+     $ tree Exercise04
+	Exercise04
+	└── a
+	    └── b
+		└── c
+		    └── d
+
+	4 directories, 0 files
+     $ pwd
+     /home/tarena
+     $ cd Exercise04/a/b/c/d
+     $ pwd
+     /home/tarena/Exercise04/a/b/c/d
+
+  touch
+  作用：如果文件不存在，则创建新的文件
+        如果文件已经存在，则更新文件的修改时间
+  使用：touch 文件路径
+  实例：
+    $ touch node.txt
+    $ touch Exercise02/node.txt 
+
+  rm
+  作用：删除文件或者文件夹
+  使用：rm [选项] 文件名或文件夹名
+      常用选项值：
+      * r -> 递归删除文件夹内容的文件和文件夹
+      * i -> 删除前提供提示信息(y->yes,n->no)(建议使用)
+      * f -> 强制删除，不提供任何提示(不建议使用)
+  实例：
+    $ rm node.txt
+    $ tree Exercise04
+	Exercise04
+	└── a
+	    └── b
+		└── c
+		    └── d
+
+	4 directories, 0 files
+    $ rm -r Exercise04 
+    $ rm -ri MyLinux
+    
+  补充: 命令名称 --help ： 可以用来查看命令的帮助信息
+        man 命令名称： 可以查看命令对应帮助文档/手册
+	    手册内可以输入q退出
+	              向上/向下箭头：按行翻
+		      按空格：按页翻
+
+  history
+  作用：查看以前输入的命令
+  使用：输入history回车
+  实例:
+    $ history
+  补充：
+    输入“!编号”，可以执行编号对应的命令
+    $ !1566 
+     -> 执行clear命令
+
+
+  小练习：见图片
+  答案：
+ 1575  mkdir PythonBase
+ 1576  cd PythonBase/
+ 1579  mkdir myexercise
+ 1581  touch node.txt
+ 1583  mkdir myexercise/work  myexercise/game
+ 1586  touch myexercise/game/2048.txt
+ 1587  touch myexercise/work/word.txt
+ 1588  touch myexercise/work/ppt.txt
+ 1589  touch myexercise/work/excel.txt
+ 1590  tree 
+
+（3）目标：文件node.txt内写入history的命令输出
+
+ 输出重定向
+ 作用：将输出的内容重新定位到指定的文件内容
+ 使用:
+   * ">" -> 将命令的输出定向到指定文件(清空原有的内容)
+   * ">>" -> 将命令的输出*追加*到指定文件的末尾
+ 实例：
+   $ man ls > ppt.txt
+   $ man rm >> ppt.txt
+
+ cat 
+ 作用：查看文件的内容->将文件内容输出到终端
+ 使用：cat 文件名
+ 实例：
+   $ cat ppt.txt
+
+ head 
+ 作用：查看文件头部前几行的内容
+ 使用：head [-n] 文件名
+     其中，n指显示前n行的内容
+ 实例：
+   $ head ppt.txt	-> 默认输出10行
+   $ head -3 ppt.txt
+
+ tail
+ 作用：查看文件末尾最后几行的内容
+ 使用：tail [-n] 文件名
+     其中，n指显示最后n行的内容
+ 实例：
+   $ tail ppt.txt	-> 默认输出10行
+   $ tail -7 ppt.txt
+
+ more
+ 作用：分页显示文本内容
+ 使用：more 文件名
+ 实例：
+   $ more ppt.txt
+ 操作：
+   * 空格键	向下翻页
+   * 回车键	向下翻行
+   * q字母	退出
+
+ 类似命令：less
+
+ cp -> 拷贝
+ 使用： cp -r 源文件或者源文件夹  目标文件或者目标文件夹
+ 实例： 
+   $ cp work/ppt.txt  game/
+   $ cp -r PythonBase/  /tmp/
+
+ mv -> 改名或移动
+ 实例：
+   $ mv PythonBase/ PB
+   $ mv PB mylinux/
+
+ 作业:
+ 见图片：课后作业。

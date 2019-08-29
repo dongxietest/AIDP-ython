@@ -1,0 +1,119 @@
+魏明择
+weimz@tedu.cn
+
+
+
+day08 回顾
+  模块
+    xxx.py
+        a = 100
+        def fa():
+           pass
+        class abc():
+            pass
+
+       函数,类,变量
+    模块.属性
+    import xxx
+         xxx.a
+         xxx.fa
+    from xxx import a,fa,abc
+         print(a)
+         fa()
+    from xxx import *
+    模块要放在 指定的文件夹内
+    dir(xxx)  列表模块内所有属性
+内置模块:
+   time
+   math
+   sys
+   random
+模块的预置属性:
+   __file__  绑定模块的路径文件名
+   __name__ 绑定模块的名称,当为主模块时值为:
+            '__main__'
+   __all__ 列表
+      会影响 from xxx import 语句
+        此语句只导入 __all__内的属性 
+包:
+  包是一个存放有一些模块的文件夹
+  包文件夹内必须有文件 __init__.py
+  mypack/
+      __init__.py
+      mymode.py
+      games/
+          __init__.py
+          aaa.py
+             def fa(): pass
+          bbb.py
+              # from mypack.games.aaa import fa
+              from .aaa import fa
+              def fb():
+                  fa()
+                  from . import aaa
+                  aaa.fa()
+          ccc.py
+
+       ....
+  包的导入:
+    import mypack
+    import mypack.mymode
+    from mypack import mymode
+    from mypack.mymode import xxx
+    from mypack.mymode import *
+
+
+
+day09 笔记
+ftp://code.tarena.com.cn/
+  ttwcode
+  python_2018
+
+练习:
+  写一个 get_score函数:
+    def get_score():
+        s = input("请输入学生成绩:")
+        ... # 此处把学生成绩 转为0~100之
+        间的整数返回给调用者,如果输入有误，则
+        返回0
+    
+    score = get_score()
+    print("学生的成绩是:", score)
+    要求：　有任何情况下，程序都能正常退
+
+
+练习:
+   写一个生成器函数:
+    def myrange(start, stop=None,
+                step=None):
+           ...
+    for x in myrange(3):
+        print(x)  # 打印 0, 1, 2
+    for x in myrange(5, 8):
+        print(x)  # 打印 5, 6, 7
+    for x in myrange(5, 10, 2):
+        print(x)   # 打印 5, 7, 9
+
+for y in [x**2 for x in range(1000000000000000000)]:
+    pass
+for y in (x**2 for x in range(1000000000000000000000000000000000000000000)):
+    print(y)
+
+
+# 方法１
+names = ["中国移动", "中国电信", "中国联通"]
+i = 1
+for x in names:
+    print("第", i, '个是:', x)
+    i += 1
+
+＃ 方法2
+names = ["中国移动", "中国电信", "中国联通"]
+for i, x in enumerate(names, 1):
+    print("第", i, '个是:', x)
+
+
+
+
+
+

@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>waid1905_1415.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<h1 id="%E3%80%8Adjango-%E6%95%99%E7%A8%8B%E3%80%8B">《Django 教程》</h1>
+<ul>
+<li>讲师: 魏明择</li>
+<li>时间: 2019</li>
+</ul>
+<h2 id="%E7%9B%AE%E5%BD%95">目录</h2>
+<!-- TOC depthFrom:3 depthTo:5 -->
+<ul>
+<li><a href="#%E5%BC%82%E5%B8%B8%E5%9F%BA%E7%A1%80-exception">异常(基础) exception</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%94%99%E8%AF%AF">什么是错误</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%82%E5%B8%B8">什么是异常</a></li>
+<li><a href="#try-except%E8%AF%AD%E5%8F%A5">try-except语句</a>
+<ul>
+<li><a href="#python%E5%85%A8%E9%83%A8%E7%9A%84%E9%94%99%E8%AF%AF%E7%B1%BB%E5%9E%8B">Python全部的错误类型</a></li>
+</ul>
+</li>
+<li><a href="#try-finally%E8%AF%AD%E5%8F%A5">try-finally语句</a></li>
+<li><a href="#raise-%E8%AF%AD%E5%8F%A5">raise 语句</a></li>
+<li><a href="#assert-%E8%AF%AD%E5%8F%A5%E6%96%AD%E8%A8%80%E8%AF%AD%E5%8F%A5">assert 语句（断言语句）</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BF%AD%E4%BB%A3%E5%99%A8-iterator">迭代器 Iterator</a>
+<ul>
+<li><a href="#%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%87%BD%E6%95%B0iter%E5%92%8Cnext">迭代器函数iter和next</a></li>
+</ul>
+</li>
+<li><a href="#%E7%94%9F%E6%88%90%E5%99%A8-generator-python-25%E5%8F%8A%E4%B9%8B%E5%90%8E">生成器 Generator (python 2.5及之后)</a>
+<ul>
+<li><a href="#%E4%B8%A4%E7%A7%8D%E7%94%9F%E6%88%90%E5%99%A8">两种生成器:</a></li>
+<li><a href="#%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0">生成器函数</a>
+<ul>
+<li><a href="#yield-%E8%AF%AD%E5%8F%A5">yield 语句</a></li>
+<li><a href="#%E7%94%A8%E7%94%9F%E6%88%90%E5%99%A8%E5%AE%9E%E7%8E%B0%E9%98%B6%E4%B9%98">用生成器实现阶乘:</a></li>
+<li><a href="#%E9%80%92%E5%BD%92%E7%94%9F%E6%88%90%E5%99%A8">递归生成器</a></li>
+</ul>
+</li>
+<li><a href="#%E7%94%9F%E6%88%90%E5%99%A8%E8%A1%A8%E8%BE%BE%E5%BC%8F">生成器表达式</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BF%AD%E4%BB%A3%E5%B7%A5%E5%85%B7%E5%87%BD%E6%95%B0">迭代工具函数</a>
+<ul>
+<li><a href="#zip%E5%87%BD%E6%95%B0">zip函数</a></li>
+<li><a href="#%E6%9E%9A%E4%B8%BE%E5%87%BD%E6%95%B0-enumerate">枚举函数 enumerate</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AD%97%E8%8A%82%E4%B8%B2%E5%92%8C%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84">字节串和字节数组</a>
+<ul>
+<li><a href="#%E5%AD%97%E8%8A%82%E4%B8%B2-bytes%E4%B9%9F%E5%8F%AB%E5%AD%97%E8%8A%82%E5%BA%8F%E5%88%97">字节串 bytes(也叫字节序列)</a></li>
+<li><a href="#%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84-bytearray">字节数组 bytearray</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h2 id="day14">day14</h2>
+<h3 id="%E5%BC%82%E5%B8%B8%E5%9F%BA%E7%A1%80-exception">异常(基础) exception</h3>
+<h4 id="%E4%BB%80%E4%B9%88%E6%98%AF%E9%94%99%E8%AF%AF">什么是错误</h4>
+<ul>
+<li>错误是指由于逻辑或语法等导致一个程序已无法正常执行的问题</li>
+</ul>
+<h6 id="%E9%94%99%E8%AF%AF%E7%9A%84%E7%89%B9%E7%82%B9">错误的特点</h6>
+<ul>
+<li>有些错误是无法预知的</li>
+</ul>
+<h4 id="%E4%BB%80%E4%B9%88%E6%98%AF%E5%BC%82%E5%B8%B8">什么是异常</h4>
+<ul>
+<li>异常是程序出错时标识的一种状态</li>
+<li>当异常发生时，程序不会再向下执行，而转去调用此函数的地方待处理此错误并恢复为正常状态.</li>
+</ul>
+<h6 id="%E5%BC%82%E5%B8%B8%E4%BD%9C%E7%94%A8%EF%BC%9A">异常作用：</h6>
+<ul>
+<li>用作信号, 通知上层调用者有错误产生需要处理</li>
+</ul>
+<!--
+- 如果此异常得到了处理，则程序恢复为正常状态，在异常处理语句后继续执行。
+- 如果此异常最终没有得到处理，则到达了程序的最上层模块，则程序将终止运行。
+- 异常的捕获和处理需要try语句中的except子句来进行.
+-->
+<h6 id="try%E8%AF%AD%E5%8F%A5%E7%9A%84%E4%B8%A4%E7%A7%8D%E8%AF%AD%E6%B3%95">try语句的两种语法</h6>
+<pre><code>try-except语句
+try-finally语句
+</code></pre>
+<h4 id="try-except%E8%AF%AD%E5%8F%A5">try-except语句</h4>
+<h6 id="try-except%E8%AF%AD%E6%B3%95">try-except语法</h6>
+<pre><code>try:
+    可能触发异常的语句
+except 错误类型1 [as 变量1]：
+    异常处理语句1
+except 错误类型2 [as 变量2]：
+    异常处理语句2
+except (错误类型3,错误类型4) [as 变量3]：
+    异常处理语句3
+...
+except：
+    异常处理语句other
+else:
+    未发生异常语句
+finally:
+    最终语句
+</code></pre>
+<h6 id="%E4%BD%9C%E7%94%A8%EF%BC%9A">作用：</h6>
+<ul>
+<li>偿试捕获异常，得以异常通知，将程序由异常流程转为正常流程并继续执行</li>
+</ul>
+<h6 id="try-except%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E%EF%BC%9A">try-except语法说明：</h6>
+<ul>
+<li>
+<p>as 子句是用于绑定错误对象的变量，可以省略</p>
+</li>
+<li>
+<p>except子句可以有一个或多个，但至少要有一个</p>
+</li>
+<li>
+<p>else子句最多只能有一个，也可以省略不写</p>
+</li>
+<li>
+<p>finally子句最多只能有一个，也可以省略不写</p>
+</li>
+<li>
+<p>try/except/else/finally中的语句要进行缩进来表明语句的所属关系</p>
+</li>
+</ul>
+<h6 id="try-except-%E5%A4%84%E7%90%86%E8%AF%B4%E6%98%8E">try-except 处理说明</h6>
+<ul>
+<li>except 子句用来捕获和处理当某种类型的错误并处理异常，把程序由异常状态改变为正常状态</li>
+<li>except 子句会根据错误的类型进行匹配，如匹配成功则调用异常处理语句进行处理，然后程序转入正常状态.</li>
+<li>如果没有匹配到任何错误类型，则程序的异常状态会继续下出,并向上层(调用处)传递</li>
+<li>如果没有异常，则执行else子句中的语句</li>
+<li>最后执行finally子句的中的语句</li>
+<li>如果没有相应的错误类型与之匹配,则执行空类型的except子句(except:)异常处理语句,之后程序进入正常状态.</li>
+</ul>
+<h6 id="%E5%BC%82%E5%B8%B8%E7%A4%BA%E4%BE%8B">异常示例</h6>
+<pre><code># file : try_except.py
+def div_apple(n):
+    print(&quot;%d个苹果你想分给几个人?&quot; % n)
+    s = input(&quot;请输入人数: &quot;)
+    cnt = int(s)  # &lt;&lt;-- 可能触发ValueError错误！
+    result = n/cnt  # &lt;&lt;-- 可能触发ZeroDivisionError 错误!
+    print(&quot;每个人分了&quot;, result, &quot;个苹果&quot;)
+
+try:
+    print(&quot;开始分苹果&quot;)
+    div_apple(10)
+    print(&quot;分苹果完成&quot;)
+except ZeroDivisionError:
+    print(&quot;发生被0除的错误!, 转为正常状态&quot;)
+except ValueError:
+    print(&quot;发生ValueErorr类型的错误!,转为正常状态!&quot;)
+except:
+    print(&quot;有其它类型的错误发生，在这里已经处理，并转为正常状态&quot;)
+else:
+    print(&quot;try语句内没有出现错误&quot;)
+finally:
+    print(&quot;try语句已经执行完毕&quot;)
+    
+print(&quot;程序正常执行并完成任务！&quot;)
+</code></pre>
+<h6 id="%E5%BC%82%E5%B8%B8%E7%A4%BA%E4%BE%8B2">异常示例2</h6>
+<pre><code>try:
+    v = 3/0
+    print(&quot;3能够被0整除&quot;)
+except ZeroDivisionError:
+    print(&quot;发生被0除的错误!&quot;)
+
+print(&quot;try语句执行完毕，程序正常结束&quot;)
+</code></pre>
+<!-- 
+课堂练习:
+  写一个函数get_score() 来获取学生输入的成绩（0〜100的整数),如果输入出现异常，则此函数返回0,否则返回用户输入的成绩.
+  def get_score():
+      ....
+  score = get_score()
+  print("学生的成绩是:", score)
+ -->
+<h5 id="python%E5%85%A8%E9%83%A8%E7%9A%84%E9%94%99%E8%AF%AF%E7%B1%BB%E5%9E%8B">Python全部的错误类型</h5>
+<table>
+<thead>
+<tr>
+<th>错误类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><!-- 以下内容必讲 --></td>
+<td></td>
+</tr>
+<tr>
+<td>ZeroDivisionError</td>
+<td>除(或取模)零 (所有数据类型)</td>
+</tr>
+<tr>
+<td>ValueError</td>
+<td>传入无效的参数</td>
+</tr>
+<tr>
+<td>AssertionError</td>
+<td>断言语句失败</td>
+</tr>
+<tr>
+<td>StopIteration</td>
+<td>迭代器没有更多的值</td>
+</tr>
+<tr>
+<td>IndexError</td>
+<td>序列中没有此索引(index)</td>
+</tr>
+<tr>
+<td>IndentationError</td>
+<td>缩进错误</td>
+</tr>
+<tr>
+<td>OSError</td>
+<td>输入/输出操作失败</td>
+</tr>
+<tr>
+<td>ImportError</td>
+<td>导入模块/对象失败</td>
+</tr>
+<tr>
+<td>NameError</td>
+<td>未声明/初始化对象 (没有属性)</td>
+</tr>
+<tr>
+<td>AttributeError</td>
+<td>对象没有这个属性</td>
+</tr>
+<tr>
+<td><!-- 以下不常用 --></td>
+<td></td>
+</tr>
+<tr>
+<td>GeneratorExit</td>
+<td>生成器(generator)发生异常来通知退出</td>
+</tr>
+<tr>
+<td>TypeError</td>
+<td>对类型无效的操作</td>
+</tr>
+<tr>
+<td>KeyboardInterrupt</td>
+<td>用户中断执行(通常是输入^C)</td>
+</tr>
+<tr>
+<td>OverflowError</td>
+<td>数值运算超出最大限制</td>
+</tr>
+<tr>
+<td>FloatingPointError</td>
+<td>浮点计算错误</td>
+</tr>
+<tr>
+<td>BaseException</td>
+<td>所有异常的基类</td>
+</tr>
+<tr>
+<td>SystemExit</td>
+<td>解释器请求退出</td>
+</tr>
+<tr>
+<td>Exception</td>
+<td>常规错误的基类</td>
+</tr>
+<tr>
+<td>StandardError</td>
+<td>所有的内建标准异常的基类</td>
+</tr>
+<tr>
+<td>ArithmeticError</td>
+<td>所有数值计算错误的基类</td>
+</tr>
+<tr>
+<td>EOFError</td>
+<td>没有内建输入,到达EOF 标记</td>
+</tr>
+<tr>
+<td>EnvironmentError</td>
+<td>操作系统错误的基类</td>
+</tr>
+<tr>
+<td>WindowsError</td>
+<td>系统调用失败</td>
+</tr>
+<tr>
+<td>LookupError</td>
+<td>无效数据查询的基类</td>
+</tr>
+<tr>
+<td>KeyError</td>
+<td>映射中没有这个键</td>
+</tr>
+<tr>
+<td>MemoryError</td>
+<td>内存溢出错误(对于Python 解释器不是致命的)</td>
+</tr>
+<tr>
+<td>UnboundLocalError</td>
+<td>访问未初始化的本地变量</td>
+</tr>
+<tr>
+<td>ReferenceError</td>
+<td>弱引用(Weak reference)试图访问已经垃圾回收了的对象</td>
+</tr>
+<tr>
+<td>RuntimeError</td>
+<td>一般的运行时错误</td>
+</tr>
+<tr>
+<td>NotImplementedError</td>
+<td>尚未实现的方法</td>
+</tr>
+<tr>
+<td>SyntaxError Python</td>
+<td>语法错误</td>
+</tr>
+<tr>
+<td>TabError</td>
+<td>Tab 和空格混用</td>
+</tr>
+<tr>
+<td>SystemError</td>
+<td>一般的解释器系统错误</td>
+</tr>
+<tr>
+<td>UnicodeError</td>
+<td>Unicode 相关的错误</td>
+</tr>
+<tr>
+<td>UnicodeDecodeError</td>
+<td>Unicode 解码时的错误</td>
+</tr>
+<tr>
+<td>UnicodeEncodeError</td>
+<td>Unicode 编码时错误</td>
+</tr>
+<tr>
+<td>UnicodeTranslateError</td>
+<td>Unicode 转换时错误</td>
+</tr>
+<tr>
+<td>以下为警告类型</td>
+<td></td>
+</tr>
+<tr>
+<td>Warning</td>
+<td>警告的基类</td>
+</tr>
+<tr>
+<td>DeprecationWarning</td>
+<td>关于被弃用的特征的警告</td>
+</tr>
+<tr>
+<td>FutureWarning</td>
+<td>关于构造将来语义会有改变的警告</td>
+</tr>
+<tr>
+<td>OverflowWarning</td>
+<td>旧的关于自动提升为长整型(long)的警告</td>
+</tr>
+<tr>
+<td>PendingDeprecationWarning</td>
+<td>关于特性将会被废弃的警告</td>
+</tr>
+<tr>
+<td>RuntimeWarning</td>
+<td>可疑的运行时行为(runtime behavior)的警告</td>
+</tr>
+<tr>
+<td>SyntaxWarning</td>
+<td>可疑的语法的警告</td>
+</tr>
+<tr>
+<td>UserWarning</td>
+<td>用户代码生成的警告</td>
+</tr>
+</tbody>
+</table>
+<p>详见：help(<strong>builtins</strong>)</p>
+<!--
+###### Python全部的错误类型
+| 错误类型 | 说明 |
+|-|-|
+BaseException | 所有异常的基类
+SystemExit | 解释器请求退出
+KeyboardInterrupt | 用户中断执行(通常是输入^C)
+Exception | 常规错误的基类
+StopIteration | 迭代器没有更多的值
+GeneratorExit | 生成器(generator)发生异常来通知退出
+StandardError | 所有的内建标准异常的基类
+ArithmeticError | 所有数值计算错误的基类
+FloatingPointError | 浮点计算错误
+OverflowError | 数值运算超出最大限制
+ZeroDivisionError | 除(或取模)零 (所有数据类型)
+AssertionError | 断言语句失败
+AttributeError | 对象没有这个属性
+EOFError | 没有内建输入,到达EOF 标记
+EnvironmentError | 操作系统错误的基类
+OSError | 输入/输出操作失败
+WindowsError | 系统调用失败
+ImportError | 导入模块/对象失败
+LookupError | 无效数据查询的基类
+IndexError | 序列中没有此索引(index)
+KeyError | 映射中没有这个键
+MemoryError | 内存溢出错误(对于Python 解释器不是致命的)
+NameError | 未声明/初始化对象 (没有属性)
+UnboundLocalError | 访问未初始化的本地变量
+ReferenceError | 弱引用(Weak reference)试图访问已经垃圾回收了的对象
+RuntimeError | 一般的运行时错误
+NotImplementedError | 尚未实现的方法
+SyntaxError Python | 语法错误
+IndentationError | 缩进错误
+TabError | Tab 和空格混用
+SystemError | 一般的解释器系统错误
+TypeError | 对类型无效的操作
+ValueError | 传入无效的参数
+UnicodeError | Unicode 相关的错误
+UnicodeDecodeError | Unicode 解码时的错误
+UnicodeEncodeError | Unicode 编码时错误
+UnicodeTranslateError | Unicode 转换时错误
+以下为警告类型
+Warning | 警告的基类
+DeprecationWarning | 关于被弃用的特征的警告
+FutureWarning | 关于构造将来语义会有改变的警告
+OverflowWarning | 旧的关于自动提升为长整型(long)的警告
+PendingDeprecationWarning | 关于特性将会被废弃的警告
+RuntimeWarning | 可疑的运行时行为(runtime behavior)的警告
+SyntaxWarning | 可疑的语法的警告
+UserWarning | 用户代码生成的警告
+
+见: html/exception_type.txt
+-->
+<h2 id="day14-pm">day14 pm</h2>
+<h4 id="try-finally%E8%AF%AD%E5%8F%A5">try-finally语句</h4>
+<h6 id="try-finally%E8%AF%AD%E6%B3%95">try-finally语法</h6>
+<pre><code>try:
+    可能触发异常的语句
+finally:
+    最终语句
+</code></pre>
+<h6 id="try-finally%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E%EF%BC%9A">try-finally语法说明：</h6>
+<ul>
+<li>finally子句不可以省略</li>
+<li>一定不存在except子句</li>
+</ul>
+<h6 id="try-finally%E8%AF%AD%E5%8F%A5%E7%9A%84%E4%BD%9C%E7%94%A8-%EF%BC%9A">try-finally语句的作用 ：</h6>
+<ul>
+<li>通常用try-finally语句来做触发异常时必须要的处理的事情
+无论异常是否发生，finally子句都会被执行</li>
+<li>try-finally语句不会改变程序的(正常/异常)状态</li>
+</ul>
+<h6 id="try-finally%E8%AF%AD%E6%B3%95%E7%A4%BA%E4%BE%8B%EF%BC%9A">try-finally语法示例：</h6>
+<pre><code># file : try_finally.py
+# 以煎蛋,打开燃气和关闭燃气
+def fry_egg():
+    print(&quot;打开天燃气点然...&quot;)
+    try:
+        count = int(input(&quot;请输入鸡蛋个数：&quot;))
+        print(&quot;完成煎鸡蛋,共煎了%d个鸡蛋&quot; % count )
+    finally:
+        print(&quot;关闭天然气&quot;)
+try:
+    fry_egg()
+except ValueError:
+    print(&quot;煎蛋中发生错误!&quot;)
+</code></pre>
+<!-- 不讲
+###### try嵌套
+  try嵌套是指一个try语句嵌套在另一个try内使用
+###### try嵌套异常状态传递
+- 先在内部try语句中的except子句中处理，如果内部try语句没有except语句来捕获到异常，则此异常将传递到外层的try语句再进行处理,直接到最处层的try语句.
+
+###### try嵌套示例
+    try:
+        try:
+            f = open("aaaaa.txt", 'r')
+        finally:
+            print("file open error!!!")
+    except:
+        print("has except happend!")
+    finally:
+        print("外层的finally被调用")
+-->
+<h4 id="raise-%E8%AF%AD%E5%8F%A5">raise 语句</h4>
+<h6 id="raise-%E8%AF%AD%E5%8F%A5%E7%9A%84%E4%BD%9C%E7%94%A8">raise 语句的作用</h6>
+<ul>
+<li>触发一个错误，让程序进入异常状态</li>
+<li>发送错误通知给调用者</li>
+</ul>
+<h6 id="raise-%E8%AF%AD%E5%8F%A5%E7%9A%84%E8%AF%AD%E6%B3%95">raise 语句的语法</h6>
+<pre><code>raise 异常类型
+# 或
+raise 异常对象
+# 或
+raise  # 重新触发上一次异常
+</code></pre>
+<h6 id="raise-%E8%AF%AD%E5%8F%A5%E7%9A%84%E7%A4%BA%E4%BE%8B1">raise 语句的示例1</h6>
+<pre><code># file:  raise.py
+def make_except():
+    print(&quot;begin&quot;)
+    # raise ValueError
+    raise ValueError(&quot;值错误!&quot;)
+    print(&quot;end&quot;)
+
+try:
+    make_except()
+    print(&quot;....&quot;)
+except ValueError as e:
+    print(&quot;发生了值错误，已处理&quot;)
+    print(e)
+
+print(&quot;程序结束&quot;)
+</code></pre>
+<h6 id="%E7%A4%BA%E4%BE%8B2">示例2</h6>
+<pre><code>def get_score():
+    score = int(input(&quot;请输入您的成绩: &quot;))
+    if score &lt; 0:  # 如果成绩小于零分
+        raise ValueError
+    if score &gt; 150:
+        raise ValueError(&quot;超出了最高成绩&quot;)
+    return score
+
+try:
+    score = 0
+    score = get_score()
+except ValueError as err:
+    print(&quot;出现值错误!, 错误的对象是:&quot;, err)
+print(&quot;学生的成绩是:&quot;, score)
+</code></pre>
+<!-- 
+练习:
+  写一个函数 get_age() 用来获取一个人的年龄信息
+    此函数规则用户只能输入1~140之间的整数，如果用户输入其它的数则直接触发ValueError类型的错误！
+
+    def get_age():
+        ...
+    try:
+        age = get_age()
+        print("用户输入的年龄是:", age)
+    except ValueError as err:
+        print("用户输入的不是1~140的整数，获取年龄失败!")
+ -->
+<h4 id="assert-%E8%AF%AD%E5%8F%A5%EF%BC%88%E6%96%AD%E8%A8%80%E8%AF%AD%E5%8F%A5%EF%BC%89">assert 语句（断言语句）</h4>
+<h6 id="assert-%E8%AF%AD%E5%8F%A5%E7%9A%84%E8%AF%AD%E6%B3%95">assert 语句的语法</h6>
+<pre><code>assert 真值表达式, 错误数据(通常是字符串)
+</code></pre>
+<h6 id="assert-%E8%AF%AD%E5%8F%A5%E7%9A%84%E4%BD%9C%E7%94%A8">assert 语句的作用</h6>
+<ul>
+<li>当真值表达式为False时，用错误数据创建一个AssertionError类型的错误，并进入异常状态</li>
+</ul>
+<h6 id="%E7%AD%89%E5%90%8C%E4%BA%8E">等同于:</h6>
+<pre><code>if 真值表达式 == False:
+   raise AssertionError(错误数据)
+</code></pre>
+<h6 id="assert-%E8%AF%AD%E5%8F%A5%E7%9A%84%E7%A4%BA%E4%BE%8B1">assert 语句的示例1</h6>
+<pre><code># 获取学生成绩:
+def get_score():
+    s = int(input(&quot;请输入学生成绩:&quot;))
+    assert 0 &lt;= s &lt;= 100, &quot;成绩超出范围!&quot;
+    return s
+
+try:
+    score = get_score()
+    print(&quot;学生的成绩为:&quot;, score)
+except AssertionError as err:
+    print(err)
+    print(&quot;检查正在进行中...&quot;)
+
+print(&quot;程序退出&quot;)
+</code></pre>
+<h6 id="assert-%E8%AF%AD%E5%8F%A5%E7%9A%84%E7%A4%BA%E4%BE%8B2">assert 语句的示例2</h6>
+<pre><code>def get_age():
+    a = input(&quot;请输入年龄&quot;)
+    a = int(a)
+    assert a &lt; 120, &quot;年龄太大了，可能吗?&quot;
+    assert a &gt;= 0, &quot;还没出生?&quot;
+    return a
+try:
+    age = get_age()
+except AssertionError as ex:
+    print(&quot;发生输入年龄不合法的错误!&quot;, ex)
+    age = 0
+except:
+    print(&quot;发生了其它的错误!,暂不处理&quot;)
+    age = 0
+print(&quot;您输入的年龄是:&quot;, age)
+</code></pre>
+<h6 id="%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6">为什么要用异常处理机制</h6>
+<ul>
+<li>在程序调用层数较深时，向主调函数传递错误信息需要层层return返回比较麻烦,所以用异常处理机制</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">f1</span><span class="hljs-params">()</span>:</span>
+    print(<span class="hljs-string">"开始盖房子打地基"</span>)
+    <span class="hljs-keyword">return</span> ValueError(<span class="hljs-string">"挖掘出文物停工!!!"</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">f2</span><span class="hljs-params">()</span>
+    <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"开始盖房子地面以上的部分"</span>)</span>
+    <span class="hljs-title">return</span> <span class="hljs-title">ZeroDevisionError</span><span class="hljs-params">(<span class="hljs-string">"规划建设高压线停工!!!"</span>)</span>
+
+<span class="hljs-title">def</span> <span class="hljs-title">f3</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">"第二承包商开始找人干活"</span>
+    f1()
+    f2()
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">build_house</span><span class="hljs-params">()</span>:</span>
+    f3()
+
+build_house()
+</div></code></pre>
+<!-- 
+
+###### 调试
+###### 文档测试 doctest 模块
+    # file: factor.py
+    def fac(n):
+        """
+        计算阶乘的函数
+        输入n
+        返回n!
+        例如：
+        >>> fac(5)
+        120
+        >>> fac(4)
+        24
+        """
+        if 2 == n:
+            return 1
+        return n * fac(n - 1)
+
+    # file: test.py
+    import factor
+    import doctest
+
+    doctest.testmod(factor)
+ -->
+<!--
+###### 单元测试 unittest模块
+-->
+<!--
+###### 练习：
+  1. 一个球从100米高空落下，每次落地后反弹高度为原高度的一半，再落下．写程序算出皮球在第10次落地后反弹多高，打印出共经过多少米路程
+
+  2. 分解质因数，输入一个正整数,分解质因数，
+    如输入:90,则打印 "90=2*3*3*5"
+    (质因数是指最小能被原数整除的素数(不包括1))
+
+  3. 修改原学生信息管理程序，加入异常处理语句，让程序在任何情况下都能按逻辑正常执行
+    如: 输入成绩和年龄时，如果用户输入非法字符串也不会导致程序崩溃。
+
+练习:
+
+
+1. 答案
+n = int(input("请输入弹跳次数:"))
+# 用循环来实现
+def ball(height, times):
+    travel = 0  # 经历路程
+    for i in range(times):
+        travel += height + height / 2
+        height = height / 2
+    return (travel, height)
+# 用递归来实现
+def ball(height, times):
+    # 如果不需要弹跳直接返回
+    if times <= 0:
+        return (0, height)
+    # 本次弹跳的高度先算出来
+    t = height + height / 2  # 本次经历路程
+    lt, lh = ball(height / 2, times - 1)
+    return (t + lt, lh)
+t, h = ball(100, n)
+print("经历路程:", t, "最终反弹高度:", h)
+
+-->
+<h2 id="day15">day15</h2>
+<h3 id="%E8%BF%AD%E4%BB%A3%E5%99%A8-iterator">迭代器 Iterator</h3>
+<h6 id="%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%AD%E4%BB%A3%E5%99%A8">什么是迭代器</h6>
+<ul>
+<li>迭代器是访问可迭代对象的工具</li>
+<li>迭代器是指用 iter(obj) 函数返回的对象(实例)</li>
+<li>迭代器可以用next(it)函数获取可迭代对象的数据</li>
+</ul>
+<h4 id="%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%87%BD%E6%95%B0iter%E5%92%8Cnext">迭代器函数iter和next</h4>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iter(iterable)</td>
+<td>从可迭代对象中返回一个迭代器,iterable必须是能提供一个迭代器的对象</td>
+</tr>
+<tr>
+<td>next(iterator)</td>
+<td>从迭代器iterator中获取下一个记录，如果无法获取一下条记录，则触发 StopIteration 异常</td>
+</tr>
+</tbody>
+</table>
+<h6 id="%E8%BF%AD%E4%BB%A3%E5%99%A8%E8%AF%B4%E6%98%8E">迭代器说明</h6>
+<ul>
+<li>迭代器只能往前取值,不会后退</li>
+<li>用iter函数可以返回一个可迭代对象的迭代器</li>
+</ul>
+<h6 id="%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%A4%BA%E4%BE%8B%EF%BC%9A">迭代器示例：</h6>
+<pre><code># 示例 可迭代对象
+L = [1, 3, 5, 7]
+it = iter(L)  # 从L对象中获取迭代器
+next(it)  # 1  从迭代器中提取一个数据
+next(it)  # 3
+next(it)  # 5
+next(it)  # 7
+next(it)  # StopIteration 异常
+# 示例2 生成器函数
+It = iter(range(1, 10, 3))
+next(It)  # 1
+next(It)  # 4
+next(It)  # 7
+next(It)  # StopIteration
+</code></pre>
+<h6 id="%E8%BF%AD%E4%BB%A3%E5%99%A8%E7%9A%84%E7%94%A8%E9%80%94">迭代器的用途</h6>
+<ul>
+<li>迭代器对象能用next函数获取下一个元素</li>
+</ul>
+<h6 id="%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%87%BD%E6%95%B0iter%E5%92%8Cnext-%E7%A4%BA%E4%BE%8B%EF%BC%9A">迭代器函数iter和next 示例：</h6>
+<pre><code>L = [2, 3, 5, 7]
+it = iter(L)
+# 访问列表中的所有元素
+while True:
+    try:
+        print(next(it))
+    except StopIteration:
+        print(&quot;迭代器访问结束&quot;)
+        break
+
+L = [2, 3, 5, 7]
+for x in L:
+    print(x)
+else:
+    print(&quot;迭代器访问结束&quot;)
+</code></pre>
+<!-- 
+课堂练习：
+    有一个集合:
+    s = {"唐僧", "悟空", "八戒", "沙僧"}
+    # 用for 语句来遍历所有元素如下：
+    for x in s:
+        print(x)
+    else:
+        print("遍历结束")
+    # 请将上面的for语句改写为while语句和迭代器实现
+ -->
+<h3 id="%E7%94%9F%E6%88%90%E5%99%A8-generator-python-25%E5%8F%8A%E4%B9%8B%E5%90%8E">生成器 Generator (python 2.5及之后)</h3>
+<h6 id="%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%9F%E6%88%90%E5%99%A8">什么是生成器:</h6>
+<ul>
+<li>生成器是能够动态提供数据的可迭代对象</li>
+<li>生成器是在程序运行时生成数据，与容器类不同，它通常不会在内存中保存大量的数据，而是现用现生成</li>
+</ul>
+<h4 id="%E4%B8%A4%E7%A7%8D%E7%94%9F%E6%88%90%E5%99%A8">两种生成器:</h4>
+<ul>
+<li>生成器函数</li>
+<li>生成器表达式</li>
+</ul>
+<h4 id="%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0">生成器函数</h4>
+<ul>
+<li>含有yield语句的函数是生成器函数,此函数被调用将返回一个生成器对象</li>
+<li>yield翻译为 (产生或生成)</li>
+</ul>
+<h5 id="yield-%E8%AF%AD%E5%8F%A5">yield 语句</h5>
+<h6 id="yield%E8%AF%AD%E6%B3%95">yield语法</h6>
+<pre><code>yield 表达式
+</code></pre>
+<h6 id="yield%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E">yield语法说明</h6>
+<ul>
+<li>yield 用于 def 函数中，目的是将此函数作为生成器函数使用</li>
+<li>yield 用来生成数据，供迭代器的next(it)函数使用.</li>
+</ul>
+<h6 id="%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0%E7%A4%BA%E4%BE%8B1">生成器函数示例1:</h6>
+<pre><code>def myyield():
+    yield 2
+    yield 3
+    yield 5
+    yield 7
+    print(&quot;生成结束!&quot;)
+
+for x in myyield():  # 调用生成器函数，返回可迭代的生成器对象
+    print(x)
+</code></pre>
+<h6 id="%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0%E8%AF%B4%E6%98%8E">生成器函数说明:</h6>
+<ul>
+<li>生成器函数的调用将返回一个生成器对象,生成器对象是一个可迭代对象</li>
+<li>在生成器函数调用return会触发一个 StopIteration 异常（即生成数据结束）</li>
+</ul>
+<h6 id="%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0%E7%A4%BA%E4%BE%8B2">生成器函数示例2:</h6>
+<pre><code># 此生成器函数可以生成从0开始的一系列整数，到n结束(不包含n)
+def myinteger(n):
+    i = 0
+    while i &lt; n:
+        yield i
+        i += 1
+
+for x in myinteger(3):
+    print(x)  # 打印 0, 1, 2
+
+it = iter(myinteger(2))
+print(next(it))  # 0
+print(next(it))  # 1
+print(next(it))  # StopIteration异常
+</code></pre>
+<h6 id="%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0%E7%A4%BA%E4%BE%8B3">生成器函数示例3:</h6>
+<pre><code>def even(start, end):
+    s = start
+    while s &lt; end:
+        if s % 2 == 0:
+            yield s
+        s += 1
+    return &quot;生成器函数结束&quot;
+
+It = even(3, 10)
+next(It)
+next(It)
+next(It)
+next(It)
+next(It)
+next(It)
+# for in 循环
+for x in even(1, 10):
+    print(x)
+# 列表推导式
+L = [x**2 for x in even(1, 20)]
+</code></pre>
+<h6 id="%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B">生成器函数的执行过程</h6>
+<ul>
+<li>
+<p>生成器函数是在next(it)对生成器返回的迭代器进行操作时才开始调用，当遇到yield语句时结束调用并返回数据给next(it)函数调用</p>
+</li>
+<li>
+<p>生成器函数每次运行到yield语句则暂停执行，保存此函数当前的执行状态，下一次调用next(it)时则从当前的执行状态开始继续执行</p>
+</li>
+<li>
+<p>当生成器函数返回时会触发StopIteration异常来通知next(it) 函数调用结束，同时释放此生成器函数执行时占有的资源</p>
+</li>
+</ul>
+<h6 id="%E7%94%9F%E6%88%90%E5%99%A8%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B%E7%A4%BA%E4%BE%8B">生成器函数的执行过程示例</h6>
+<pre><code>def myyield():
+    print(&quot;即将生成2&quot;)
+    yield 2
+    print(&quot;即将生成3&quot;)
+    yield 3
+    print(&quot;即将生成5&quot;)
+    yield 5
+    print(&quot;生成结束!&quot;)
+
+it = iter(myyield())  # it绑定迭代器
+next(it)
+</code></pre>
+<!-- 
+练习：
+  0. 写一个生成器函数:
+     def myinteger(n):
+         ....
+      此生成器函数可以生成从0开始的一系列整数，到n结束(不包含n)
+      for x in myinteger(3):
+          print(x)  # 打印 0, 1, 2
+      it = iter(myinteger(2))
+      print(next(it))  # 0
+      print(next(it))  # 1
+      print(next(it))  # StopIteration异常
+练习:
+    写一个生成器函数 myeven(start, stop) 用来生成从start开始到stop结束区间内的一系列偶数
+    def myeven(start, stop):   # 不包含stop
+         .... 
+    evens = list(myeven(10, 20))
+    print(evens)  # [10, 12, 14, 16, 18]
+    for x in myeven(21, 30):
+         print(x)  # 22 24 26 28 
+    it = iter(myeven(5, 10))
+    print(next(it))  # 6
+    print(next(it))  # 8
+    print(next(it))  # StopIteration
+ -->
+<!--
+以下内容不讲
+
+##### 用生成器实现阶乘:
+    def factorial(n):
+      result = 1
+      i = 1
+      while i <= n:
+        result *= i
+        i+=1
+        yield result
+
+    print list(factorial(5))
+    print [x for x in factorial(5)]
+
+用生成器遍历含有列表的列表
+
+    def flatten(nested):
+      for sublist in nested:
+        for element in sublist:
+          yield element
+
+> 测试代码:
+
+    nested = [[1,2],[3,4],[5]]
+    for num in flatten(nested):
+      print (num)
+
+或者如下方式运行：
+
+    nested = [[1,2],[3,4],[5]]
+    #
+    nested = [[1,2],[3,4],[5],[[6,7],8], 9]
+    list(flatten(nested))
+
+##### 递归生成器
+
+    def flatten(nested):
+      try:
+        # 当nested不再是序列时会引发异常，直接返回nested
+        for sublist in nested:
+          for element in flatten(sublist):
+            yield element
+      except TypeError:
+        yield nested
+-->
+<!--
+课堂练习1：
+  1. 写一个生成器函数 myodd(x) 从1开始到x以内的生成一系列奇数,
+  如:
+     myodd(10) 可以生成 1, 3, 5, 7, 9
+
+  2. 写一个生成器函数 myprimes(n) 来生成n以内的所有素数,
+      打印100以内的所有素数
+
+课堂练习：
+  3. 写一个生成器函数myxrange([start, ]stop[, stop]) 来生成一系列整数
+  要求:
+    myxrange功能与range功能完全相同
+    不允许调用range函数和列表
+  4. 用自己写的myxrange 结合生成器表达式 求1~10内奇数的平方和
+
+答案:
+def myxrange(s, s2=None, s3=1):
+    start = 0
+    stop = s
+    step = s3
+
+    if s2 == None:
+        pass
+    else:
+        stop = s2
+        start = s
+
+    if s3 > 0:
+        while start < stop:
+            yield start
+            start += step
+    else:
+        while start > stop:
+            yield start
+            start += step
+
+-->
+<h2 id="day15-pm">day15 pm</h2>
+<h4 id="%E7%94%9F%E6%88%90%E5%99%A8%E8%A1%A8%E8%BE%BE%E5%BC%8F">生成器表达式</h4>
+<h6 id="%E7%94%9F%E6%88%90%E5%99%A8%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E6%B3%95%EF%BC%9A">生成器表达式语法：</h6>
+<pre><code>( 表达式 for 变量 in 可迭代对象 [if 真值表达式] )
+</code></pre>
+<h6 id="%E7%94%9F%E6%88%90%E5%99%A8%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E6%B3%95-%E8%AF%B4%E6%98%8E%EF%BC%9A">生成器表达式语法 说明：</h6>
+<pre><code>if 子句可以省略
+</code></pre>
+<h6 id="%E7%94%9F%E6%88%90%E5%99%A8%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BD%9C%E7%94%A8%EF%BC%9A">生成器表达式作用：</h6>
+<ul>
+<li>用推导式形式创建一个新的生成器</li>
+</ul>
+<h6 id="%E7%94%9F%E6%88%90%E5%99%A8%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%A4%BA%E4%BE%8B">生成器表达式示例</h6>
+<pre><code>gen = (x**2 for x in range(1, 5))
+it = iter(gen)
+next(it) # 1
+next(it) # 4
+next(it) # 9
+next(it) # 16
+next(it) # StopIteration
+</code></pre>
+<!-- 
+练习:
+    1. 已知有列表:
+            L = [2, 3, 5, 7]
+        1) 写一个生成器函数,让此函数能够动态提供数据，数据为原列表的数字的平方加1
+        2) 写一个生成器表达式,让此表达式能够动态提供数据，数据为原列表的数字的平方加1
+        3) 写一个列表,此列表内的数据为原列表的数字的平方加1
+
+    2. 试写一个生成器函数 myfilter，要求此函数与系统内建的filter函数的功能一致
+，
+    
+    3. 看下列函数的输出结果是什么？为什么？
+        # 第一个程序
+        L = 【2, 3, 5, 7】
+        A = [x*10  for x in L]
+        it = iter(A)
+        print(next(it))  # 20
+        L[1] = 333
+        print(next(it))  # ??? 30
+        # 第二个程序
+        L = 【2, 3, 5, 7】
+        A = (x*10  for x in L)
+        it = iter(A)
+        print(next(it))  # 20
+        L[1] = 333
+        print(next(it))  # ??? 3330
+
+ -->
+<h3 id="%E8%BF%AD%E4%BB%A3%E5%B7%A5%E5%85%B7%E5%87%BD%E6%95%B0">迭代工具函数</h3>
+<ul>
+<li>迭代工具函数的作用是生成一个个性化可迭代对象</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>zip(iter1 [,iter2 [...]])</td>
+<td>返回一个zip生成器对象, 此对象用于生成一个元组，此元组的数据分别来自于参数中每个可迭代对象,生成元组的个数由最小的可迭代对象大小决定</td>
+</tr>
+<tr>
+<td>enumerate(iterable, start=0)</td>
+<td>返回一个enumerate生成器对象，此对象生成类型为(索引,值对)的元组,<br>默认索引从零开始，也可以用start指定</td>
+</tr>
+</tbody>
+</table>
+<h4 id="zip%E5%87%BD%E6%95%B0">zip函数</h4>
+<h6 id="zip-%E7%A4%BA%E4%BE%8B">zip 示例</h6>
+<pre><code>numbers = [10086, 10000, 10010, 95588]
+names = [&quot;中国移动&quot;, &quot;中国电信&quot;, &quot;中国联通&quot;]
+# z为可迭代对象,每个元素为元组(号码,名字)
+for n, a in zip(numbers, names):
+    print(a, &quot;的客服号码:&quot;, n)
+
+R = range(100)
+names = ['zhangfei', 'zhaoyun', 'guanyu']
+areas = ['北京', '上海', '深圳', '天津']
+for x in zip(R, names, areas):
+    print(x)
+# (0, 'zhangfei', '北京')
+# (1, 'zhaoyun', '上海')
+# (2, 'guanyu', '深圳')
+</code></pre>
+<h6 id="zip%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E7%A4%BA%E4%BE%8B">zip函数的实现原理示例:</h6>
+<pre class="hljs"><code><div>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">myzip</span><span class="hljs-params">(*args)</span>:</span>
+        ...
+</div></code></pre>
+<h6 id="enumerate-%E7%A4%BA%E4%BE%8B">enumerate 示例</h6>
+<pre><code>names = [&quot;中国移动&quot;,&quot;中国电信&quot;, '中国联通']
+for no, name in enumerate(names, 1):
+    print(no, &quot;.&quot;, name)
+for x in enumerate(names, 1):
+    print(x)
+</code></pre>
+<h4 id="%E6%9E%9A%E4%B8%BE%E5%87%BD%E6%95%B0-enumerate">枚举函数 enumerate</h4>
+<h6 id="enumerate-%E5%87%BD%E6%95%B0%E6%A0%BC%E5%BC%8F">enumerate 函数格式</h6>
+<pre><code>enumerate(iterable[, start])
+</code></pre>
+<h6 id="enumerate-%E5%87%BD%E6%95%B0%E4%BD%9C%E7%94%A8">enumerate 函数作用</h6>
+<ul>
+<li>生成一个枚举对象，新迭代器生成的数据会将原迭代器取出的数据与索引值形成元组(index, value)形式返回值</li>
+</ul>
+<h6 id="enumerate-%E5%87%BD%E6%95%B0%E7%A4%BA%E4%BE%8B">enumerate 函数示例</h6>
+<pre><code>for i,v in enumerate(&quot;ABC&quot;, 1):
+    print(&quot;第&quot;, i, &quot;个字符是&quot;,  v)
+</code></pre>
+<h6 id="enumerate%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E7%A4%BA%E4%BE%8B">enumerate函数的实现原理示例:</h6>
+<pre class="hljs"><code><div>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">myenumerate</span><span class="hljs-params">(iterable, start=<span class="hljs-number">0</span>)</span>:</span>
+        ...
+</div></code></pre>
+<!-- 
+###### 练习
+    写一个程序，读入任意行的文字，当输入空行时结束输入。
+    打印带有行号的输入结果
+    如:
+    $ python3 mytest.py
+    请输入: hello<回车>
+    请输入: world<回车>
+    请输入: bye<回车>
+    请输入: <回车>
+    输出如下：
+    第1行: hello
+    第2行: world
+    第3行: bye
+ -->
+<h6 id="%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%9B%B4%E6%A3%8B%E7%BB%83%E4%B9%A0">迭代器围棋练习:</h6>
+<ul>
+<li>用字典表示一个围棋棋盘,字典的键用字母和数字组合来表示位置：
+<ul>
+<li>如:A1 代表左上角的位置 A19代表右上角位置,S1代表左下角位置,S19代表右下角位置</li>
+</ul>
+</li>
+<li>字典的值用来表示围棋子的分布,0表示无棋子，1表示黑子，2表示白子.
+<ul>
+<li>如:{&quot;B3&quot;: 1 }表示第2行，第3列摆有一个黑子.</li>
+</ul>
+</li>
+<li>用推导式生成一个字典，</li>
+<li>用字典推导式生成器一个二维的棋盘,棋盘上无棋子，</li>
+<li>在第9行，第11列放一个白子。</li>
+<li>在第11行，第9列放一个黑子。</li>
+</ul>
+<h6 id="%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%9B%B4%E6%A3%8B%E7%BB%83%E4%B9%A0%E7%AD%94%E6%A1%88">迭代器围棋练习答案:</h6>
+<pre><code>chessboard = {}
+for x in range(19):
+    for y in range(19):
+        k = chr(ord('A')+y) + str(x+1)
+        chessboard[k] = 0
+# 其它做法:
+chessboard={chr(ord('A')+y) + str(x+1): 0 for x in range(19) for y in range(19) }
+</code></pre>
+<!--
+实现mymap生成器函数
+实现xrange
+实现fibonacci生成器函数
+把之前的练习全部拿出来重做和遍
+
+###### 练习:
+    1. 用生成器函数，生成素数,给出起始值begin和终止值stop
+    此生成器函数为prime(begin, stop)
+    如果 [x for x in prime(10, 20)] 将得到
+      列表[11, 13, 17, 19]
+    练习使用yield
+
+    2. 写一个生成器函数,生成斐波那契数据的前n个数
+      １ １ ２ ３ ５ ８ 13
+    def fibonacci(n):
+        yield...
+      1) 输出前20个数：
+        for x in fibonacci(20):
+           print(x)
+      2) 打印前40个数的和:
+        print(sum(fibonacci(40)))  # 267914295
+      答案:
+        def fibonacci(n):
+            a = 0
+            b = 1
+            count = 0
+            while count < n:
+                a, b = b, a + b
+                yield a
+                count += 1
+
+    3.  写一个生成器函数myfactorial(n) 此函数用来生成n个从1开始到n的阶乘:
+       即: 1!   2!   3!   .... n!
+    def myfactorial(n):
+        ....
+    L = list(myfactorial(5))  # L = [1, 2, 6, 24, 120]
+      答案:
+        用生成器实现阶乘:
+        def factorial(n):
+          result = 1
+          i = 1
+          while i <= n:
+            result *= i
+            i+=1
+            yield result
+
+
+    3. 思考题:
+       如何让学生管理系统启动时就读入文件中的学生信息．
+-->
+<h3 id="%E5%AD%97%E8%8A%82%E4%B8%B2%E5%92%8C%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84">字节串和字节数组</h3>
+<h4 id="%E5%AD%97%E8%8A%82%E4%B8%B2-bytes%E4%B9%9F%E5%8F%AB%E5%AD%97%E8%8A%82%E5%BA%8F%E5%88%97">字节串 bytes(也叫字节序列)</h4>
+<h6 id="%E5%AD%97%E8%8A%82%E4%B8%B2%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%9A">字节串的作用：</h6>
+<ul>
+<li>存储以字节为单位的数据</li>
+<li>字节串是不可变的字节序列</li>
+</ul>
+<h6 id="%E5%AD%97%E8%8A%82%E4%B8%B2%E8%AF%B4%E6%98%8E">字节串说明:</h6>
+<ul>
+<li>字节是0~255之间的整数,用来表示一个字节的取值</li>
+</ul>
+<h6 id="%E5%88%9B%E5%BB%BA%E7%A9%BA%E5%AD%97%E8%8A%82%E4%B8%B2%E5%AD%97%E9%9D%A2%E5%80%BC">创建空字节串字面值</h6>
+<pre><code>B = b''     # B为空字节串
+B = b&quot;&quot;     # B为空字节串
+B = b'''''' # B为空字节串
+B = b&quot;&quot;&quot;&quot;&quot;&quot; # B为空字节串
+B = bytes() # B为空字节串
+</code></pre>
+<h6 id="%E5%88%9B%E5%BB%BA%E9%9D%9E%E7%A9%BA%E5%AD%97%E8%8A%82%E4%B8%B2%E5%AD%97%E9%9D%A2%E5%80%BC">创建非空字节串字面值</h6>
+<pre><code>B = bytes([0x41, 0x42, 0x43, 0x44])
+B = b'ABCD'
+B = b&quot;ABCD&quot;  # 类型为bytes
+B = b'\x41\x42'
+</code></pre>
+<h6 id="%E5%AD%97%E8%8A%82%E4%B8%B2%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0bytes">字节串的构造函数bytes</h6>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bytes()</td>
+<td># 生成一个空的字节串 等同于 b''</td>
+</tr>
+<tr>
+<td>bytes(整型可迭代对象)</td>
+<td># 用可迭代对象初始化一个字节串</td>
+</tr>
+<tr>
+<td>bytes(整数n)</td>
+<td>生成n个值为0的字节串</td>
+</tr>
+<tr>
+<td>bytes(字符串, encoding='utf-8')</td>
+<td>用字符串的转换编码生成一个字节串</td>
+</tr>
+</tbody>
+</table>
+<h6 id="bytes%E7%9A%84%E8%BF%90%E7%AE%97">bytes的运算</h6>
+<pre><code>+ += * *=
+&lt; &lt;= &gt; &gt;= == !=
+in /not in
+索引和切片
+
+len()
+max(x)
+min(x)
+sum(x)
+any(x)
+all(x)
+</code></pre>
+<h6 id="bytes%E4%B8%8Estr%E7%9A%84%E5%8C%BA%E5%88%AB">bytes与str的区别:</h6>
+<ul>
+<li>bytes存储字节</li>
+<li>str存储unicode字符</li>
+</ul>
+<h6 id="bytes%E4%B8%8Estr%E8%BD%AC%E6%8D%A2">bytes与str转换:</h6>
+<pre><code>       编码(encode)
+str   ------------&gt; bytes
+    b = s.encode(encoding='utf-8')
+       解码(decode)
+bytes ------------&gt; str
+    s = b.decode(encoding='utf-8')
+</code></pre>
+<!-- 
+练习:
+  写一个程序，从键盘输入一段字符串用变量s绑定
+  1. 将此字符串转为字节串用变量b绑定,并打印出来.
+  2. 打印字符串s的长度和字节串b的长度
+  3. 将b字节串再转换为字符串用变量s2绑定，判断s2与s是否相同
+ -->
+<h4 id="%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84-bytearray">字节数组 bytearray</h4>
+<ul>
+<li>可变的字节序列</li>
+</ul>
+<h6 id="%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0-bytearray">字节数组的构造函数 bytearray</h6>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bytearray()</td>
+<td>创建空的字节数组</td>
+</tr>
+<tr>
+<td>bytearray(整数)</td>
+<td>用可迭代对象初始化一个字节数组</td>
+</tr>
+<tr>
+<td>bytearray(整型可迭代对象)</td>
+<td>生成n个值为0的字节数组</td>
+</tr>
+<tr>
+<td>bytearray(字符串, encoding='utf-8')</td>
+<td>用字符串的转换编码生成一个字节数组</td>
+</tr>
+</tbody>
+</table>
+<h6 id="%E6%93%8D%E4%BD%9C">操作:</h6>
+<pre><code>+ += * *= 
+比较运算: &lt; &lt;= &gt; &gt;= == != 
+in / not in 运算符
+索引 index / 切片 slice 
+(字节数组的索引和切片可以赋值操作, 规则同列表的索引和切片赋值)
+</code></pre>
+<h6 id="bytearray-%E7%9A%84%E6%96%B9%E6%B3%95">bytearray 的方法:</h6>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B.clear()</td>
+<td>清空</td>
+</tr>
+<tr>
+<td>B.append(n)</td>
+<td>追加一个字节(n为0-255的整数)</td>
+</tr>
+<tr>
+<td>B.remove(value)</td>
+<td>删除第一个出现的字节,如果没有出现，则产生ValueError错误</td>
+</tr>
+<tr>
+<td>B.reverse()</td>
+<td>字节的顺序进行反转</td>
+</tr>
+</tbody>
+</table>
+<p>B.decode(encoding='utf-8')
+B.find(sub[, start[, end]])</p>
+<!-- 
+练习:有一个bytearray字节序列:
+   ba=bytearray(b'a1b2c3d4')
+   如何得到字符串 '1234'和'abcd'
+
+   将上述bytearray改为bytearray(b'A1B2C3D4')
+ -->
+
+</body>
+</html>

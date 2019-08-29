@@ -1,0 +1,214 @@
+函数
+def 函数名(参数列表):
+    """ 文档字符串 """
+    语句
+
+参数：函数使用者传递给函数定义者的信息
+返回值：函数定义者传递给函数调用者的结果
+函数返回值默认为None
+
+参数分为形参和实参
+传参
+  位置传参
+    序列传参 *[1,2,3]
+  关键字传参 a = 10
+    字典传参 **{'a':10,'b':20}  a = 10 b = 20
+
+综合传参
+函数的位置传参要先于关键字传参
+
+函数的缺省传参
+def myadd(x,y=10):
+   pass
+
+myadd(20)
+myadd(20,30)
+
+函数形参定义方式：
+位置形参
+多参数定义  星号元组形参  双星号字典形参
+命名关键字参数
+
+def fun(*args,x,y):
+   print(*args)
+   print(x)
+
+fun(x=10,y=20)
+
+def fun(**kwargs):
+   for k in **kwargs:
+       print(k)
+
+def fun(*args,**kwargs):
+    pass
+
+
+作用域
+局部作用域
+外部嵌套函数作用域
+全局作用域
+內建作用域
+
+局部变量 全局变量
+
+global声明
+def fun():
+    global x
+    x = 100#全局
+
+
+def fun():
+    x = 100#局部
+fun()
+
+globals()
+locals()
+
+函数变量
+fun
+fun()
+一个函数可以作为参数传给另一个函数
+函数可以作为另一个函数的返回值
+
+嵌套函数
+def wai_fun():
+   x = 10
+   def nei_fun():
+       nonlocal x
+       x = 20
+
+   nei_fun()
+   print(x)
+
+wai_fun()
+
+lambda表达式
+def 函数名
+函数名()
+作用：创建一个匿名函数对象
+
+lambda 函数形参列表:表达式
+lambda x,y : x + y
+lambda表达式只能包含一条表达式
+优点：可以随时创建销毁  可以减少程序的耦合度
+
+
+eval和exec函数
+eval：把一个字符串当成一个表达式执行 返回执行的结果
+exec：把一个字符串当成一段程序来运行
+
+eval(source,globals=None,locals=None)
+exec(source,globals=None,locals=None)
+source 要解释执行分字符串(必须符合Python语法的表达式或语句)
+globals source执行时的全局作用域的变量字典
+locals source执行时的局部作用域的变量字典
+
+
+函数式编程
+是用函数解决问题
+print(sum(range(1,11)))
+
+函数的可重入性
+def mysum(x,y):
+    return x + y
+
+mysum(10,20)
+
+s = 100
+def mysum2(x,y):
+    return s + x + y
+mysum2(10,20)
+
+高阶函数
+满足两个条件之一：
+1.函数接收一个或多个函数作为参数
+2.函数返回一个函数
+
+Python內建的高阶函数
+map filter sorted
+
+map函数
+map(func,iter1,iter2...)
+def map(func,*args)
+返回一个迭代对象
+此可迭代对象用func函数对iter中的每一个元素作为参数
+代入func计算 得到结果之后再返回
+当最短的可迭代对象不在提供数据时，生成结束
+
+filter函数
+filter(func,iter)
+返回一个可迭代对象
+只返回iter中满足func的数据(保留func值为True的数据)
+
+sorted函数
+sorted(iter,key=None,reverse=False)
+将可迭代对象的数据进行排序 生成排序后的列表
+key函数 用来提供一个值 作为排序的依据
+reverse 是否降序排列
+
+
+递归函数
+def fun()
+   代码块
+   fun()
+fun()
+
+def fun1():
+    fun2()
+def fun2():
+    fun1()
+
+递归一定要控制递归的层数，当符合条件时终止递归调用
+
+闭包
+闭包是指函数引用了此函数外部嵌套函数的变量
+def fun1():
+   a = 1
+   def fun2():
+      print(a)
+
+   return fun2
+
+fun1()
+闭包必须满足三个条件
+1.必须有内嵌函数
+2.内嵌函数必须引用外部函数的变量
+3.外部函数的返回值必须是内嵌函数
+
+由于闭包的使用中，函数变量都被保存到内存中，会消耗内存
+所以不要滥用闭包
+
+闭包的应用场景:需要逻辑连续时，当内部函数调用时，不脱离当前的逻辑
+
+
+装饰器
+装饰器是一个函数 作用是用来包装另一个函数或类
+在不修改被装饰函数的基础之上为函数添加新的功能或改变原有功能
+
+
+函数文档字符串
+函数的文档字符串绑定在函数的__doc__属性中
+
+
+模块
+包含一系列数据(表达式 函数 类)
+是一个文件 以.py结尾的
+
+模块的分类：
+内置模块 在解释器内部可直接使用
+标准库模块 安装Python时自动安装且可以直接使用的模块
+第三方模块 需要自己安装的(自定义模块可以作为其他人的第三方模块)
+
+pip3 install 模块名
+pip3 install 模块名==版本号
+
+pip3 install flask,django,pillow
+
+pip换源 百度
+
+內建模块
+sys
+time
+math
+
+

@@ -1,0 +1,46 @@
+回顾：
+lambda 表达式
+eval 和 exec
+
+函数的可重入性
+
+高阶函数
+map filter sorted
+
+递归
+
+闭包
+1.必须有内嵌函数
+2.内嵌函数必须引用外部函数中的变量
+3.外部函数必须返回内嵌函数
+
+装饰器
+def 装饰器函数名(func):
+   语句
+   return 函数对象
+
+@装饰器函数名()
+def 被装饰函数():
+   pass
+
+模块
+模块的分类
+
+模块导入语句 import
+import 模块名1  模块名2 ...
+import beautifulsoup4 as bs4 为模块取别名 简化代码
+bs4.xxx
+
+from import
+
+dir函数
+
+import语句搜索模块的顺序
+1.搜索內建模块
+2.搜索程序运行时的目录
+3.sys.path 列表 字符串形式的目录名
+
+
+
+
+
